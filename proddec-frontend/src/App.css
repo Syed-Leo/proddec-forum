@@ -1,0 +1,257 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(-45deg, #f8fafc, #fef3c7, #f8fafc, #fde68a); background-size: 400% 400%; animation: gradientMove 12s ease infinite; } /* Animated gradient */ @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } } /* ========================= FLOATING BACKGROUND EFFECT ========================= */ body::before { content: ""; position: fixed; top: -100px; left: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(245,158,11,0.2), transparent 70%); animation: float 10s ease-in-out infinite alternate; z-index: -1; } body::after { content: ""; position: fixed; bottom: -150px; right: -150px; width: 400px; height: 400px; border-radius: 50%; background: rgba(245, 158, 11, 0.08); z-index: -1; } @keyframes float { from { transform: translate(0, 0); } to { transform: translate(80px, 80px); } }
+
+
+/* =========================
+   FLOATING BACKGROUND EFFECT
+========================= */
+
+
+.container,
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: #0f172a;
+  color: white;
+  align-items: center;
+}
+
+.navbar h2 {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navbar li:hover {
+  color: #f59e0b;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 80px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #f59e0b, #ffb703);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 18px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.hero-sub {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* =========================
+   FORM CONTROLS
+========================= */
+
+.search {
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  outline: none;
+}
+
+.search:focus {
+  border-color: #f59e0b;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+select:focus {
+  border-color: #f59e0b;
+}
+
+/* =========================
+   POST CARDS
+========================= */
+
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #f59e0b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   PARTICLES BACKGROUND
+========================= */
+
+.particles-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Animated gradient layer */
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #f8fafc, #fef3c7, #f8fafc, #fde68a);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -2;
+}
+
+.footer {
+  background: #0f172a;
+  color: white;
+  margin-top: 80px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px 40px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #f59e0b;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li:hover {
+  color: #f59e0b;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #1e293b;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
