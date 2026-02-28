@@ -7,7 +7,7 @@ function Forum() {
   const [category, setCategory] = useState("All");
 
   useEffect(() => {
-    fetch("http://localhost:5000/posts")
+    fetch("https://proddec-forum.onrender.com/posts")
       .then(res => res.json())
       .then(data => setPosts(data))
       .catch(err => console.error(err));
